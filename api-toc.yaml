@@ -1,0 +1,82 @@
+openapi: 3.0.0
+x-stoplight:
+  id: utxhuq3j8i052
+info:
+  title: 'Create new API at TOC in format: Mainfunctionality-businessunit'
+  version: '1.0'
+  description: 'Write a brief description of the API using the following format: This API provides access to [functionality] so that users can [actions]'
+  contact:
+    email: You must include an email address for your API
+    name: Add the API product name or Department if you wish
+    url: Add any online webpage about your API if it exists
+  license:
+    name: 'WIPO uses The Apache License, Version 2.0 by default'
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+  termsOfService: 'If there are no specific API Terms of Service documented, you may choose to use: https://www.wipo.int/tools/en/disclaim-ipportal.html'
+servers:
+  - url: 'http://localhost:3000'
+paths:
+  /user:
+    post:
+      summary: Create New User
+      operationId: post-user
+      responses:
+        '200':
+          description: User Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+              examples:
+                New User Bob Fellow:
+                  value:
+                    id: 12
+                    firstName: Bob
+                    lastName: Fellow
+                    email: bob.fellow@gmail.com
+                    dateOfBirth: '1996-08-24'
+                    emailVerified: false
+                    createDate: '2020-11-18'
+        '400':
+          description: You must complete a description and error message for each of the most common response codes
+        '409':
+          description: You must complete a description and error message for each of the most common response codes
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                lastName:
+                  type: string
+                email:
+                  type: string
+                dateOfBirth:
+                  type: string
+                  format: date
+              required:
+                - firstName
+                - lastName
+                - email
+                - dateOfBirth
+            examples:
+              Create User Bob Fellow:
+                value:
+                  firstName: Bob
+                  lastName: Fellow
+                  email: bob.fellow@gmail.com
+                  dateOfBirth: '1996-08-24'
+        description: Post the necessary fields for the API to create a new user.
+      description: Create a new user.
+components:
+  schemas:
+    OAS-template-fields:
+      x-stoplight:
+        id: j1yoc0331ig0b
+      __ERROR__: |-
+        Error: Error getting file "/models/OAS-template-fields.yaml". 
+        '/models/OAS-template-fields.yaml' not found.
+x-internal: false
+x-wipo-lifecycle-stage: internal

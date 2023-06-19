@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: wipoapi
+  description: Create new API at TOC in format Mainfunctionality-businessunit
+  tags:
+    - wipo
+    - rest
+  annotations:
+    # The annotation is deprecated, we use placeholders (see below) instead, remove it later.
+    backstage.io/definition-at-location: 'url:https://github.com/garbanv/wipoapi/blob/main/api-toc.yaml'
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+  definition:
+    $text: https://github.com/garbanv/wipoapi/blob/main/api-toc.yaml

@@ -1,0 +1,144 @@
+openapi: '3.0.3'
+info:
+  version: '1.0'
+  title: IPCPUB
+  description: This API provides access to IPCPUB backoffice resources
+  contact:
+    email: its4ics@wipo.int
+servers:
+  - url: https://collioud.wipo.int:8001/api/v1
+  - url: https://api.ipcpub.ics.dev.web1.wipo.int/api/v1
+  - url: https://api.ipcpub.ics.acc.web1.wipo.int/api/v1
+  - url: https://ipcpub.wipo.int/api/v1
+paths:
+  /search/quick:
+    summary: search for terms using all available engines
+    get:
+      parameters:
+        - name: q
+          in: query
+          schema:
+            type: string
+        - $ref: '#/components/parameters/IpcVersion'
+        - $ref: '#/components/parameters/LanguageCode'
+        - $ref: '#/components/parameters/PageLength'
+        - $ref: '#/components/parameters/PageOffset'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchResult'
+components:
+  schemas:
+    SearchResult:
+      type: object
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        count:
+          type: integer
+          minimum: 0
+        version:
+          type: string
+        lang:
+          type: string
+        hilite:
+          type: string
+          enum:
+            - none
+            - terms
+            - symbols
+          default: none
+        search:
+          description: selected search method
+          type: string
+          enum:
+            - sterms
+            - cterms
+            - dterms
+            - sxrefs
+            - cxrefs
+            - dxrefs
+            - stats
+            - ipccat
+        return:
+          type: string
+          enum:
+            - none
+            - terms
+            - symbols
+          default: none
+        results:
+          type: array
+      required:
+        - code
+        - message
+        - count
+        - version
+        - lang
+        - search
+        - return
+  parameters:
+    IpcVersion:
+      name: version
+      description: IPC Version number
+      in: query
+      schema:
+        type: string
+        enum:
+          - 19680901
+          - 19740701
+          - 19800101
+          - 19850101
+          - 19900101
+          - 19950101
+          - 20000101
+          - 20060101
+          - 20070101
+          - 20071001
+          - 20080101
+          - 20080401
+          - 20090101
+          - 20100101
+          - 20110101
+          - 20120101
+          - 20130101
+          - 20140101
+          - 20150101
+          - 20160101
+          - 20170101
+          - 20180101
+          - 20190101
+          - 20200101
+          - 20210101
+          - 20220101
+          - 20230101
+          - latest
+        default: latest
+    LanguageCode:
+      name: lang
+      in: query
+      schema:
+        type: string
+        enum:
+          - en
+          - fr
+        default: en
+    PageLength:
+      name: limit
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        default: 10
+    PageOffset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        minimum: 0
+        default: 0

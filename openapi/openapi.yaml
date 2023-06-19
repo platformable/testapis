@@ -1,0 +1,18 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: openapi
+  description: This API provides access to IPCPUB backoffice resources
+  tags:
+    - wipo
+    - rest
+  annotations:
+    # The annotation is deprecated, we use placeholders (see below) instead, remove it later.
+    backstage.io/definition-at-location: '$text:./openapiapi.yaml'
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: openapi
+  lifecycle: production
+  owner: team-a
+  definition:
+    $text: ./openapiapi.yaml

@@ -1,0 +1,8 @@
+site_name: openapi
+site_description: This API provides access to IPCPUB backoffice resources
+
+nav:
+  - Introduction: index.md
+
+plugins:
+  - techdocs-core
