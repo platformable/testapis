@@ -1,8 +1,11 @@
 site_name: openapi
 site_description: This API provides access to IPCPUB backoffice resources
+repo_url: https://github.com/platformable/testapis/tree/main/openapi
+edit_uri: https://github.com/platformable/testapis/edit/main/openapi/docs
 
 nav:
   - Introduction: index.md
+  - Confiration: index.md
 
 plugins:
   - techdocs-core
