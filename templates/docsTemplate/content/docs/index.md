@@ -35,4 +35,4 @@ plugins:
 ```
 
 
-> Replace ${{values}.component_id}} and ${{values.description}} if you are adding a repository manually with your component / docs name and description
+## Replace ${{values.component_id}} and ${{values.description}} if you are adding a repository manually with your component / docs name and description
