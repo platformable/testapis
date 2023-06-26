@@ -4,7 +4,9 @@ Documents are .md files hosted on a repository
 ### To create a new document follow this steps:
 
 1.- Click on Catalog -> Software
+
 2.- Click on Create Button (top right)
+
 3.- Follow instructions
 
 # How to add a Document
@@ -54,7 +56,7 @@ spec:
   type: service
   owner: engineering
   lifecycle: experimental
-  ````
+  ```
 
 ⚠️ The GitHub URL must be prefixed with url: or the documentation will not render in Backstage.
 
