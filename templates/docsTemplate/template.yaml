@@ -7,7 +7,7 @@ metadata:
   description: A document template
 spec:
   owner: user:guest
-  type: service
+  type: documentation
 
   # These parameters are used to generate the input form in the frontend, and are
   # used to gather input data for the execution of the template.
