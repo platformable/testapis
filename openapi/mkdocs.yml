@@ -5,7 +5,7 @@ edit_uri: https://github.com/platformable/testapis/edit/main/openapi/docs
 
 nav:
   - Introduction: index.md
-  - Confiration: index.md
+  - Configuration: index.md
 
 plugins:
   - techdocs-core
