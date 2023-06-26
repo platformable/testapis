@@ -5,8 +5,8 @@ metadata:
   annotations:
     backstage.io/techdocs-ref: dir:.
   links:
-    - url: https://alexeigarban.com
-      title: My Dashboard
+    - url: https://platformable.com
+      title: Platformable
       icon: dashboard
 spec:
   type: documentation
