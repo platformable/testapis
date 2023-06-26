@@ -9,6 +9,6 @@ metadata:
       title: My Dashboard
       icon: dashboard
 spec:
-  type: library
+  type: documentation
   owner: user:guest
   lifecycle: experimental
